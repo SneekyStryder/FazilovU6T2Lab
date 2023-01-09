@@ -96,7 +96,104 @@ public class ArrayAlgorithms {
         return completeArray;
     }
 
+    /** Multiplies each number in numList by multiplier.
+     *
+     *  THIS METHOD MUTATES (MODIFIES) ORIGINAL ARRAY
+     *  PRECONDITION: numList.length > 0
+     */
+    public static void multiplyBy(int[] numList, int multiplier) {
+        for (int i = 0; i < numList.length; i++) {
+            numList[i] = numList[i] * multiplier;
+        }
+    }
 
+    /** Switches each boolean value in boolList to its opposite value;
+     *  a true value becomes false, and false values become true.
+     *
+     *  THIS METHOD MUTATES (MODIFIES) ORIGINAL ARRAY
+     *  PRECONDITION: boolList.length > 0
+     */
+    public static void flipBool(boolean[] boolList) {
+        for (int i = 0; i < boolList.length; i++) {
+            if (boolList[i] == true) {
+                boolList[i] = false;
+            }
+            else if (boolList[i] == false) {
+                boolList[i] = true;
+            }
+        }
+    }
+
+    /** Adds a "!" to the end of each String in wordList.  However, if a
+     *  a string already ends in an exclamation point, do NOT add another.
+     *
+     *  THIS METHOD MUTATES (MODIFIES) ORIGINAL ARRAY
+     *  PRECONDITION: wordList.length > 0
+     */
+    public static void addExclamation(String[] wordList) {
+        for (int i = 0; i < wordList.length; i++) {
+            if (!(wordList[i].substring(wordList[i].length() - 1).equals("!"))) {
+                wordList[i] += "!";
+            }
+        }
+    }
+
+    /** Shifts all elements in numList to the LEFT one index;
+     *  this method modifies the original array and does not
+     *  return anything (void).
+     *
+     *  The first element in the array should wrap around
+     *  to the back of the array.  For example, given the array
+     *  {5, 1, 3, 4, 7, 6}, this method modifies the array
+     *  to {1, 3, 4, 7, 6, 5} (all elements shifted left one
+     *  with the last element wrapping around to the back)
+     *
+     *  THIS METHOD MUTATES (MODIFIES) ORIGINAL ARRAY
+     *  PRECONDITION: numList.length > 0
+     */
+    public static void shiftLeft(int[] numList) {
+        int firstElement = numList[0];
+        for (int i = 1; i < numList.length; i++) {
+            numList[i - 1] = numList[i];
+        }
+        numList[numList.length - 1] = firstElement;
+    }
+
+    /** Shifts all elements in numList to the RIGHT one index;
+     *  this method modifies the original array and does not
+     *  return anything (void).
+     *
+     *  The last element in the array should wrap around
+     *  to the front of the array.  For example, given the array
+     *  {5, 1, 3, 4, 7, 6}, this method modifies the array
+     *  to {6, 5, 1, 3, 4, 7} (all elements shifted right one
+     *  with the last element wrapping around to the front)
+     *
+     *  THIS METHOD MUTATES (MODIFIES) ORIGINAL ARRAY
+     *  PRECONDITION: numList.length > 0
+     */
+    public static void shiftRight(int[] numList) {
+        int lastElement = numList[numList.length - 1];
+        for (int i = numList.length - 1; i > 0; i--) {
+            numList[i] = numList[i - 1];
+        }
+        numList[0] = lastElement;
+    }
+
+    /** Reverses all elements in an array; this method modifies
+     *  the original array and does not return anything (void).
+     *
+     *  For example, given the array {5, 1, 3, 4, 7, 6}, this method
+     *  modifies the array to {6, 7, 4, 3, 1, 5}.
+     *  Should work with all array lengths (both odd and even).
+     *
+     *  THIS METHOD MUTATES (MODIFIES) ORIGINAL ARRAY
+     *  PRECONDITION: numList.length > 0
+     */
+    public static void reverse(int[] numList) {
+        // IMPLEMENT ME: You will be asked to solve this
+        //               two different ways; see below
+    }
 
 
 
