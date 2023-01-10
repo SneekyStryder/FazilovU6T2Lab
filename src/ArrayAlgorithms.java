@@ -83,6 +83,7 @@ public class ArrayAlgorithms {
      *
      *  PRECONDITION: arr1.length > 0, arr2.length > 0
      */
+
     public static int[] combine(int[] arr1, int[] arr2) {
         int[] completeArray = new int[arr1.length + arr2.length];
         for (int i = 0; i < arr1.length; i++) {
@@ -189,12 +190,30 @@ public class ArrayAlgorithms {
      *
      *  THIS METHOD MUTATES (MODIFIES) ORIGINAL ARRAY
      *  PRECONDITION: numList.length > 0
-     */
+     */ /*
     public static void reverse(int[] numList) {
-        // IMPLEMENT ME: You will be asked to solve this
-        //               two different ways; see below
-    }
+        int[] randomArray = new int[numList.length];
 
+        for (int i = 0; i < numList.length; i++) {
+            randomArray[i] = numList[i];
+        }
+
+        for (int i = 0; i < numList.length; i++) {
+            int idx = numList.length - i - 1;
+            numList[idx] = randomArray[i];
+        }
+
+    }
+    */
+
+    public static void reverse(int[] numList) {
+        for (int i = 0; i < numList.length / 2; i++) {
+            int tempVal = numList[i];
+            int idx = numList.length - i - 1;
+            numList[i] = numList[idx];
+            numList[idx] = tempVal;
+        }
+    }
 
 
 }
